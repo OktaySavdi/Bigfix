@@ -1,0 +1,62 @@
+(if it is "" then nothing else it) of (preceding texts of firsts "%22" of following texts of firsts "key=%22" of lines whose (it does not contain "<!--" and it contains "add key=" and it does not contain ":\Aktar\") of file (value of setting "IEM_PKTAKTAR" of client & "\PaketAktar.exe.config"))
+
+
+http://support.bigfix.com/fixlet/documents/BES_Relevance_Language_Reference_60_2006-11-03.pdf
+
+<?xml version="1.0"?>
+<message>
+	<to>jim@rocket_science.com
+		<name>Jim Neutron</name>
+		<nickname>Jimmy the Geek</nickname>
+	</to>
+	<to>bob@rocket_science.com
+		<name>Bob Goddard</name>
+		<nickname>The Bobster</nickname>
+	</to>
+	<from>joe@big_sky.com</from>
+	<subject>Let’s do launch!</subject>
+	<text>We are ready to test the new orbiter!</text>
+</message>
+
+Q:node names of child nodes of xml document of file "Z:\temp\SvcResponse.xml" 
+A: xml
+A: message 
+
+Q: node values of child nodes 0 of selects "message/to" of xml document of file "Z:\temp\SvcResponse.xml"
+A: jim@rocket_science.com%0a
+A: bob@rocket_science.com%0a
+
+Q: node values of child nodes of selects "message/to/nickname" of xml document of file "Z:\temp\SvcResponse.xml"
+A: Jimmy the Geek
+A: The Bobster
+
+Q: node names of next siblings of selects "message/to" of xml document of file "Z:\temp\SvcResponse.xml"
+A: to
+A: from
+
+Q: node names of parent nodes of selects "message/to" of xml document of file "Z:\temp\SvcResponse.xml"
+A: message 
+A: message
+
+Q: node names of child nodes of selects "message" of xml document of file "Z:\temp\SvcResponse.xml"
+A: to
+A: to
+A: from t
+A: subjec
+A: text
+
+Q: node names of child nodes of selects "message/to" of xml document of file "Z:\temp\SvcResponse.xml"
+A: #text
+A: name
+A: nicknam
+A: #text
+A: name
+A: nickname
+
+
+
+
+
+
+
+

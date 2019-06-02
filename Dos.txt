@@ -1,0 +1,25 @@
+
+dos %windir%\syswow64\cmd.exe /C __Download\jre-8u73-windows-i586.exe /s
+
+
+
+
+// Remove any existing directory junction point
+dos %windir%\syswow64\cmd.exe /C fsutil reparsepoint delete "%windir%\syswow64\config\systemprofile\appdata\locallow\sun\java"
+dos %windir%\syswow64\cmd.exe /C fsutil reparsepoint delete "%windir%\syswow64\config\systemprofile\appdata\locallow\oracle\java"
+
+// delete java directory in 32bit version of system32, if any
+dos rmdir /q /s "%windir%\syswow64\config\systemprofile\appdata\locallow\sun\java"
+dos rmdir /q /s "%windir%\syswow64\config\systemprofile\appdata\locallow\oracle\java"
+
+//create a java folder under system32 folder if not exists
+if {not exist folder (system folder as string &"\config\systemprofile\appdata\locallow\oracle\java")}
+action uses wow64 redirection false
+dos mkdir "%windir%\syswow64\config\systemprofile\appdata\locallow\oracle"
+dos mkdir "%windir%\system32\config\systemprofile\appdata\locallow\oracle\java"
+endif
+// create ntfs junction point from 32bit version of system32 java files to sysnative version
+// (NOTE: mklink argument seems to be in native path perspective, so system32 is correct here, not sysnative)
+action uses wow64 redirection false
+dos mklink /J "%windir%\syswow64\config\systemprofile\appdata\locallow\oracle\java" "%windir%\system32\config\systemprofile\appdata\locallow\oracle\java" 
+ 

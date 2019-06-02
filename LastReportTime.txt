@@ -1,0 +1,14 @@
+number of bes computers whose((now - last report time of it) < 10*day) 
+
+names of computers of results whose(5*day > (now - (value of it as time))) of bes property "Last Report Time" 
+
+names of computers of results whose(12*hour < (now - (value of it as time))) of bes property "Last Report Time"
+
+number of bes computers whose((now - last report time of it) < 10*day)
+
+number of bes computers whose(10*day < (now - last report time of it) )
+
+
+((now - last report time of client) / day) as string & " days"
+
+concatenation ", " of names of bes computers whose (last report time of it < now - 30 *day)

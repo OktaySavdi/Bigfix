@@ -1,0 +1,1 @@
+(exists key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL" of native registry) OR (exists key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\MSSQLServer" of native registry) OR ((exists local mssql databases) AND (exists runnings whose(it = TRUE) of local mssql databases))

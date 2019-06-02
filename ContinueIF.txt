@@ -1,0 +1,49 @@
+continue if {(size of it = 46682 AND sha1 of it = "42856a4529c58f22e79e7b1c6cfce56be9da09ad") of file "__Download\winamp5572_lite_en-us.exe"}
+
+wait __Download\winamp5572_lite_en-us.exe /S /install=SFR
+
+***********************************************************************
+continue if {name of operating system = "Win2k"}
+download now http://www.real-time.com/downloads/win98/dun40.exe
+
+***********************************************************************
+continue if {(size of it = 325 and sha1 of it = "013e48a5") of file "dun40.exe" of folder "__Download"}
+wait __Download/dun40.exe /Q:A /R:N
+
+***********************************************************************
+
+continue if {exists running service "wuauserv" OR NOT exists service "wuauserv" whose (start type of it = "disabled")}
+
+continue if {not exists running application whose ((it = "java.exe" OR it = "javaw.exe" OR it = "javaws.exe" OR it = "iexplore.exe" OR it = "firefox.exe") of (name of it as lowercase))}
+
+*************************************************************************
+begin prefetch block	
+add prefetch item name = jre-8u71-windows-i586.exe sha1=42db2fbd719a173f6d6d81bbb05f4033628c798c size=49972320 url={value of setting "_BESClient_AllowCustomRepoDownloads" of client | "http://download.oracle.com/MANUAL_BES_CACHING_REQUIRED/"}jre-8u71-windows-i586.exe sha256=3cc0be2a34f0989692c30f2cacb89cacfca7159570d5fc8c1b1498c60cbc07fb
+end prefetch block
+
+continue if {not exists running application whose ((it = "java.exe" OR it = "javaw.exe" OR it = "javaws.exe" OR it = "iexplore.exe" OR it = "firefox.exe") of (name of it as lowercase))}
+
+// Note: update .exe will restart service automatically
+if{exists running service "JavaQuickStarterService"}
+delete __appendfile
+delete stop_javaquickstarter.bat
+appendfile net stop JavaQuickStarterService
+move __appendfile stop_javaquickstarter.bat
+waithidden stop_javaquickstarter.bat
+endif
+
+regset "[HKEY_LOCAL_MACHINE\SOFTWARE\BigFix\EnterpriseClient\JavaInstallation]" "InstallingJava8_32"=dword:00000001
+
+waithidden __Download/jre-8u71-windows-i586.exe /s
+
+action may require restart "42db2fbd719a173f6d6d81bbb05f4033628c798c"
+
+continue if {exists value "DisplayVersion" whose ((it = "8" and it >= "8.0.710") of (it as string as version)) of keys whose (value "DisplayName" of it as string as lowercase contains "j2se runtime environment" OR value "DisplayName" of it as string as lowercase contains "runtimeenvironment" OR value "DisplayName" of it as string as lowercase starts with "java(tm)" OR value "DisplayName" of it as string as lowercase starts with "java 8") of key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" of registry}
+
+regdelete "[HKEY_LOCAL_MACHINE\SOFTWARE\BigFix\EnterpriseClient\JavaInstallation]" "InstallingJava8_32"
+
+
+*****************************************************************************************************************
+
+
+

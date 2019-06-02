@@ -1,0 +1,20 @@
+(language of version block of file "kernel32.dll" of system folder contains "English") OR (exists value of key "HKLM\System\CurrentControlSet\Control\Nls\MUILanguages" of registry)
+
+((language of version block of file "kernel32.dll" of system folder contains "Turkish") 
+
+
+(it contains "English" OR it contains "French" OR it contains "German" or it contains "Japanese") of language of version block of file "kernel32.dll" of system folder
+
+--OS Language - Windows
+
+language of version block of file "kernel32.dll" of system folder & (if (exists key "HKLM\System\CurrentControlSet\Control\Nls\MUILanguages" of registry AND 
+
+exists value of key "HKLM\System\CurrentControlSet\Control\Nls\MUILanguages" of registry) then " | MUI Installed" else "")
+
+--System Language - Windows
+
+system language
+
+--User Language - Windows
+
+user language

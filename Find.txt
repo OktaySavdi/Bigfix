@@ -1,0 +1,53 @@
+﻿files of folder "z:\temp"
+
+find files "*" of folder "c:\"
+
+names of folders of folder "c:/program files"
+
+names of files of folder "z:\temp"
+
+names of find folders "system*" of windows folder
+
+find files "*Wait*" of folder "Z:\PowerShell_Usefull\IEM"
+
+pathname of file "actionsite.afxm" of storage folder of client
+
+pathnames of find files "*.txt" of (descendant folders of folder "Z:\PowerShell_Usefull\IEM")
+
+find folders "*gdiplus*" of folder "winsxs" of windows folder
+
+find files "*Wait*" of folder "IEM" of folder "Z:\PowerShell_Usefull"
+
+names whose (it contains "a") of files of folder "z:\temp"
+
+files whose(name of it starts with "S") of folder "z:\temp"
+
+number of names of find folders "*86*" of folder "C:\windows\winsxs"
+
+number of find folders "win*" of find folders "system*" of windows folder
+
+number of names of find files "*" of find folders "X86*" of find folders "win*" of windows folder
+
+exists find files "BESConsole.exe" of folder "C:\Program Files (x86)\BigFix Enterprise\BES Console"
+
+find files "BESConsole.exe" whose(version of it <= "9.2.6.94") of folder "C:\Program Files (x86)\BigFix Enterprise\BES Console"
+
+(if exists ( position 1000 of it ) then ( preceding text of position 1000 of it ) else it) of concatenation "; " of lines whose (it contains "[SR] ") of file ((pathname of windows folder) & "\logs\cbs\cbs.log")
+
+(not exists file whose (name of it as lowercase ends with ".ocx" AND version of it > "6") of folder "Macromed\Flash" of system folder 
+
+pathnames of find files "*.txt" of (descendant folders of folder "Z:\PowerShell_Usefull\IEM")
+
+lines of file "c:\whitelist.txt"
+A: acrodist.exe
+A: conf.exe
+
+dosya içinde metin arama
+
+Q: content of file "C:\WIndows\system32\drivers\etc\hosts" contains "9.39.144.15"
+A: True
+
+Q: content of file "C:\WIndows\system32\drivers\etc\hosts" contains "9.39.144.16"
+A: False
+
+

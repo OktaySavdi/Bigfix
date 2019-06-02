@@ -1,0 +1,28 @@
+year of current date
+
+current month + 2*month
+
+december - current month
+
+day_of_week of current date
+
+date (local time zone) of now
+
+(day_of_week of current date - sunday) 
+
+year of date (local time zone) of now as string
+
+current date - (day_of_week of current date - sunday) 
+
+(month of date (local time zone) of now) as two digits
+
+day_of_month of date (local time zone) of now as two digits
+
+current date - (day_of_week of current date - sunday)  +  (tuesday - sunday)
+
+(month of it as two digits & "/" & day_of_month of it as two digits & "/" & year of it as string) of date (local time zone) of now
+
+(year of it as string & "_" & month of it as two digits as string & "_" & day_of_month of it as two digits as string) of date (local time zone) of now
+
+(month of date (local time zone) of now) as two digits & "/" & day_of_month of date (local time zone) of now as two digits & "/" & year of date (local time zone) of now as string
+

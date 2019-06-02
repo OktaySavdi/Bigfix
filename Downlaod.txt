@@ -1,0 +1,7 @@
+
+download “http://download.microsoft.com/download/prog.exe” run “__download\prog.exe”
+
+
+// Finally, try to install java...
+action uses wow64 redirection false
+dos %windir%\syswow64\cmd.exe /C __Download\jre-8u72-windows-i586.exe /s

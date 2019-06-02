@@ -1,0 +1,7 @@
+--performance counter frequency
+
+performance counter frequency of operating system
+
+--performance counter
+
+performance counter of operating system

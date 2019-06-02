@@ -1,0 +1,6 @@
+((now - boot time of operating system) / day) as string & " days"
+
+(now - boot time of operating system) > 6*day
+
+
+dos shutdown /r /f /d P:1:1 /c "IEM ile otorestart kapsaminda rutin kapama" /t 5

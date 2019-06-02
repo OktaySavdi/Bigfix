@@ -1,0 +1,55 @@
+﻿// Enter your action script here
+
+action parameter query "ip" with description "Sunucu adresini giriniz" with default value "PC"
+
+delete __createfile
+delete log.bat
+
+createfile until _Logtest
+
+ping {parameter "ip"} >> c:\temp\log.txt
+
+_Logtest
+
+move __createfile log.bat
+
+waithidden log.bat
+
+********************************************************************
+
+
+action parameter query "DomainAdminUser" with description "Please specify the DOMAIN\admin_username to add to Administrators" with default value "PC"
+
+
+waithidden "C:\Windows\System32\net.exe" localgroup administrators {parameter "DomainAdminUser" of action} /add
+
+********************************************************************
+// Enter your action script here
+action parameter query "TimeRange" with description "Lutfen calisma araligini giriniz ?"
+action parameter query "Runtime" with description "Lutfen calisma saatini giriniz ?"
+action parameter query "Folderpath" with description "Lutfen dosya yolunu yaziniz ?"
+
+//appendfile
+//appendfile @echo off
+//appendfile setlocal 
+//appendfile pushd d:\
+//appendfile set rpt_time=%1
+//appendfile set strt_time=%2
+//appendfile set job_fqpath=%3
+dos SCHTASKS /Create /SC HOURLY /MO {parameter "TimeRange"} /TN BESSrvHandler /ST {parameter "Runtime"} /TR {parameter "Folderpath"} /F
+//appendfile endlocal
+//appendfile popd
+//appendfile exit
+
+//move appendfile {value of setting "HB_HOME" of client}\vggen\tool\Scheduler.bat 
+//waithidden Scheduler.bat {parameter "TimeRange"} {parameter "Runtime"} {parameter "Folderpath"} 
+
+
+
+********************************************************************
+action parameter query "InstallationPoint" with description "Please enter the location of the shared installation point:"
+
+action parameter query "Registry key" with description "Please enter your desired registry key" and with default value "null"
+
+action parameter query "tips" with description "Enter 'on' or 'off' to control Fixlet tips." With default "on"
+

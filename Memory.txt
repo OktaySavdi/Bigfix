@@ -1,0 +1,3 @@
+Memory
+
+(if (it > 128) then (((it/32)*32) + (if (it mod 32 > 16) then 32 else 0) ) else it ) of (size of ram / (1024*1024*1024)) as string & " GB"

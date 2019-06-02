@@ -1,0 +1,75 @@
+﻿//PowerShell Script
+//===========================================================================
+parameter "PowerShellexe" = "C:\WINDOWS\system32\windowspowershell\v1.0\powershell.exe"
+waithidden "{parameter "PowerShellexe"}" -noprofile -executionpolicy bypass -file "C:\IEM\Tools\CollectTransfer.ps1" {parameter "Dosyalar"} {parameter "Ticket"}
+//============================================================================
+setting "Last_action_RC"={(exit code of action)} on "{now}" for client
+exit {(value of setting "Last_action_RC" of client)}
+
+
+**************************************************************************
+parameter "PowerShellexe"="{value "Path" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" of x64 registry}"
+
+dos net use k: \\10.45.130.140\ms_iis
+
+delete __appendfile
+delete ServerRoleInstall.ps1
+appendfile Import-Module ServerManager 
+appendfile $? >> c:\taft.log
+appendfile 
+appendfile # Gets the date in a string variable for logfile naming
+appendfile $DT=(Get-Date).ToString('yyyy-MM-dd')
+appendfile 
+appendfile # Gets the OS Version number to append the unattend.xml file
+appendfile $OSInstallVer = $(Get-ItemProperty HKLM:\Software\Microsoft\DataAccess).FullInstallVer
+appendfile 
+appendfile $Respin="K:\FTP-Pack\DeploymentConfigTemplate.xml"
+appendfile $Resp ="{(value of setting "HB_IEM_Root" of client)}\Tools\DeploymentConfig.xml"
+appendfile $Log ="{(value of setting "HB_IEM_Root" of client)}\Log\IIS_DeploymentConfig_$DT.log"
+appendfile 
+appendfile $content = [System.IO.File]::ReadAllText("$Respin").Replace("[COMPUTER-NAME-DEFAULT]","$($env:computername)")
+appendfile [System.IO.File]::WriteAllText("$Resp", $content)
+appendfile 
+appendfile # Asagidaki komutun çalismasi için sunucu üzerinde NetFaramework 3.5 olmasi gerekli
+appendfile Install-WindowsFeature -ConfigurationFilePath $Resp -Restart
+appendfile $? >> c:\taft.log
+
+move __appendfile ServerRoleInstall.ps1
+
+action uses wow64 redirection false
+waithidden "{parameter "PowerShellexe"}" .\ServerRoleInstall.ps1
+
+
+**************************************************************************
+
+//PowerShell Script...
+action parameter query "tarih"  with description "Tarih Giriniz - Yil-Ay-Gun"
+action parameter query "Sifre"  with description "Vggen Sifresini Giriniz"
+parameter "PolicyExisted"="{exists value "ExecutionPolicy" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" of registry}"
+parameter "oldExecutionPolicy"="{if (parameter "PolicyExisted" as boolean) then (value "ExecutionPolicy" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" of registry as string) else ""}"
+//--------------------------------------------------------
+regset "[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]" "ExecutionPolicy"="Unrestricted"
+parameter "PowerShellexe" = "C:\WINDOWS\system32\windowspowershell\v1.0\powershell.exe"
+//--------------------------------------------------------
+waithidden "{parameter "PowerShellexe"}" -file "C:\temp\service.ps1"  {parameter "tarih"} {parameter "Sifre"}
+//--------------------------------------------------------
+    if {parameter "PolicyExisted" as boolean}
+        regset "[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]" "ExecutionPolicy"="{parameter "oldExecutionPolicy"}"
+    else
+        regdelete "[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]" "ExecutionPolicy"
+    endif
+
+**************************************************************************
+
+waithidden "C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe" -executionpolicy bypass "{(client folder of current site as string) & "\__Download\scriptsrunner.ps1"}"
+
+This works for me on both 32bit and 64bit machines:
+
+waithidden "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -ExecutionPolicy Bypass -command "get-help | out-file C:\windows\temp\test_powershell.txt"
+
+
+**************************************************************************
+
+
+
+

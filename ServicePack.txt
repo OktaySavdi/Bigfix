@@ -1,0 +1,31 @@
+csd version of operating system
+
+(csd version of it >="1") of operating system
+
+csd version of operating system = "Service Pack 3"
+
+service pack major version of operating system < 2
+
+(service pack major version of it <=2) of operating system
+
+csd version of operating system as version >= "Service Pack 6" as version
+
+(name of it ="Win7" AND (csd version of it ="Service Pack 1")) of operating system
+
+(name of it = "Win2000" and service pack major version of it < 3) of operating system 
+
+(name of it = "WinXP" AND (it = "Service Pack 1") of csd version of it) of operating system
+
+(name of it ="Win7" AND (((it = 0) OR (it = 1)) of service pack major version of it )) of operating system
+
+(name of it ="Win7" and (it ="Service Pack 1" or it ="Service Pack 2") of csd version of it) of operating system 
+
+((name of it = "WinXP") AND (service pack major version of it = 3 OR service pack major version of it = 2)) of operating system
+
+(name of it = "Win2000" AND (csd version of it = "Service Pack 3" OR csd version of it = "Service Pack 4")) of operating system
+
+(name of it ="Win7" OR name of it ="WinXP" AND (csd version of it ="Service Pack 1" OR csd version of it ="Service Pack 4")) of operating systems
+
+(csd version of operating system contains "Service Pack") AND (first 1 of following text of last "Service Pack " of csd version of operating system as integer >= 2)
+
+

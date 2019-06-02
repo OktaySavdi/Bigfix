@@ -1,0 +1,7 @@
+--product type
+
+(if (it = nt workstation product type) then "Workstation" else if (it = nt server product type) then "Server" else if (it = nt domain controller product type) then "DomainController" else "Unknown") of (product type of operating system)
+
+--ProductName
+
+unique values of (it as string as trimmed string) of values "ProductName" of keys "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion" of (x32 registries;x64 registries)

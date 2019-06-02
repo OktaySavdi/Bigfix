@@ -1,0 +1,11 @@
+value of variable "ProgramFiles" of environment
+
+system folder
+
+windows folder
+
+
+value of variable "tmp" of environment
+
+
+(names of it, values of it) of variables of environment

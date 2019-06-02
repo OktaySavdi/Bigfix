@@ -1,0 +1,19 @@
+expand environment string of "%25temp%25"
+
+(expand environment string of "%25temp%25") & "\MSync.log"
+
+pathname of folder (value of variable "tmp" of environment)
+
+"C:\Documents and Settings\" & name of current user & "\appdata\local\temp\testfile.tmp"
+
+exists folders "AppData\Local\Temp" of folders of folders of folder "users" of drive of system folder 
+
+folders "AppData\Local\Temp" of folders whose(exists folder "AppData\Local\Temp" of it) of folders "C:\Users"
+
+number of lines whose(it contains "Newer than local file") of file ((expand environment string of "%25temp%25") & "\MSync.log") 
+
+number of lines whose(it contains "Orphan local file") of file ("C:\Users\" & name of current user & "\appdata\local\temp\MistSync.log")
+
+(folders "Temp" of windows folder;folders "C:\temp"; folders "C:\ProgramData\TEMP"; folders "AppData\Local\Temp" of folders whose(exists folder "AppData\Local\Temp" of it) of folders "C:\Users")
+
+value of variable "tmp" of environment

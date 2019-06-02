@@ -1,0 +1,24 @@
+action lock
+
+
+action lock indefinite "<effective date>"
+
+action lock indefinite "{now}"
+
+
+action lock until
+
+
+action lock until "<expire date>" "<effective date>"
+
+action lock until "{now + 3*days}" "{now}"
+
+action lock until "{apparent registration server time + 10 * minutes}" "{apparent registration server time}"
+
+
+action unlock
+
+
+action unlock "<effective date>"
+
+action unlock "{now}"

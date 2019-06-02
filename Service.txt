@@ -1,0 +1,27 @@
+createfile until _ServisName
+@echo off
+sc queryex type= service state= all | find /i "INACT" >> C:\{hostname}.log
+sc queryex type= service state= all | find /i "IBM" >> C:\{hostname}.log
+move c:\{hostname}.log \\10.45.135.55\Proje\{hostname}.log
+_ServisName
+
+move __createfile servis.bat
+
+waithidden servis.bat
+
+************************************************
+
+/exists service "wuauserv" whose (state of it = "Running")
+/exists service "wuauserv" whose (state of it != "Running")
+
+************************************************
+
+exists service whose(display name of it contains "tomcat")
+
+
+exists service "wuauserv" whose (start type of it = "disabled")
+
+
+exists services whose (display name of it as lowercase contains "websphere")
+
+

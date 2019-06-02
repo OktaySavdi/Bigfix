@@ -1,0 +1,2 @@
+
+(name of it) of users whose ((now - (last logon of it) > 30 * day) and name of it does not contain "$")

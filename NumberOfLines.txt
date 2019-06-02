@@ -1,0 +1,31 @@
+number of lines of file "D:\Repository\ClientPackTables.txt"
+
+number of lines of file "D:\Repository\ClientPackTables.txt" > 0   *****true-false Döner****
+
+number of line whose(it contains "deneme") of file "z:\temp\test.ps1"
+
+lines whose (it contains "38.45.23;Y") of file "z:\temp\ctm_test_srv.txt"
+
+number of lines whose(it contains "cmd") of find files "*.txt" of folder "z:\temp"
+
+number of (substrings separated by " " of "who observed what happened, when and where?") whose (it contains "w")
+
+number of lines whose(it contains "Orphan local file") of find files "*MSync.log" of folder "Result" of folder "D:\IEM\"
+
+number of lines whose(it contains "Newer than local file") of file ((expand environment string of "%25temp%25") & "\MSync.log") 
+
+number of lines whose (it contains "[SR] Cannot repair member file") of file ((pathname of windows folder) & "\logs\cbs\cbs.log")
+
+number of lines whose(it contains "Orphan local file") of file ("C:\Users\" & name of current user & "\appdata\local\temp\MistSync.log")
+
+lines whose(it contains "Web Components") of find files "*.log" of folder "Logs" of folder (pathname of windows folder & "\CCM")
+
+lines whose (line number of it = maximum of (it as integer + 1) of line numbers of lines whose (it contains "Name") of file "C:\version.log") of file "C:\version.log"
+
+number of files whose (name of it contains "KB890830") of folder (pathname of parent folder of client folder of site "actionsite" as string & "\__MSTools\RemovalTool") = 1
+
+(if exists ( position 1000 of it ) then ( preceding text of position 1000 of it ) else it) of concatenation "; " of lines whose (it contains "[SR] ") of file ((pathname of windows folder) & "\logs\cbs\cbs.log")
+
+lines of file "c:\whitelist.txt"
+A: acrodist.exe
+A: conf.exe

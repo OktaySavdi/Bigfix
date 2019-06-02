@@ -1,0 +1,4 @@
+//wait 30 seconds
+parameter "waitTime" = "{apparent registration server time}"
+pause while {((apparent registration server time) - time (parameter "waitTime")) < 30*second}
+relay select

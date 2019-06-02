@@ -1,0 +1,18 @@
+modification time of file "Z:\temp\Server.txt"
+
+modification time of file "Server.txt" of folder "Z:\temp"
+
+modification time of file "MistralGuncelle.exe" of folder "D:\home\vggen\tool" < time "Thu, 10 Mar 2016 10:57:52 +0200"
+
+modification time of file "hhctrl.ocx" of system folder < time "31 Mar 2007 00:00:00 -0000"
+
+((number of files whose (modification time of it < now - 30*day and name of it ends with ".ps1") of folder "Z:\temp"))
+
+modification time of file "MistralGuncelle.exe" of folder "D:\home\vggen\tool" < time "Thu, 10 Mar 2016 10:57:52 +0200"
+
+((number of files whose (modification time of it < now - 30*day and name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_INSTALL" of client)) > 0)
+
+((number of files whose (modification time of it < now - 30*day and name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_INSTALL" of client)))
+
+
+

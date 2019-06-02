@@ -1,0 +1,23 @@
+files of folder "Z:\temp\"
+
+number of files of folder "Z:\PowerShell_Usefull\IEM"
+
+(number of (folders of folder "D:\Application Files")) > 3
+
+number of files "ctm_test_srv.txt" of folder "z:\temp\"
+
+number of files whose(name of it ends with ".txt") of folder "Z:\PowerShell_Usefull\IEM"
+
+lines of files "ctm_test_srv.txt" of folder "Z:\Rebirth\"
+
+((number of files whose (name of it ends with ".txt") of folder ("Z:\PowerShell_Usefull\IEM")) > 0) //true döner
+
+(number of files whose(((now+1*day) > modification time of it) and (name of it ends with ".zip"))of folder "D:\HOME_PACK")
+
+((number of files whose (name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_INSTALL" of client)))
+
+((number of files whose (modification time of it < now - 30*day and name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_INSTALL" of client)))
+
+(if (exists setting "HB_HOME_INSTALL" of client) then (if (exists value of setting "HB_HOME_INSTALL" of client) then ((number of files whose (modification time of it < now - 30*day and name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_INSTALL" of client)) > 0) else false) else false) or (if (exists setting "HB_HOME_BACKUP" of client) then (if (exists value of setting "HB_HOME_BACKUP" of client) then ((number of files whose (modification time of it < now - 30*day and name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_BACKUP" of client)) > 0) else false) else false)
+
+(if (exists setting "HB_HOME_INSTALL" of client) then (if (exists value of setting "HB_HOME_INSTALL" of client) then ((number of files whose (modification time of it < now - 30*day and name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_INSTALL" of client)) > 0) else false) else false) or (if (exists setting "HB_HOME_BACKUP" of client) then (if (exists value of setting "HB_HOME_BACKUP" of client) then ((number of files whose (modification time of it < now - 30*day and name of it starts with "pck_" and name of it ends with ".zip") of folder (value of setting "HB_HOME_BACKUP" of client)) > 0) else false) else false)

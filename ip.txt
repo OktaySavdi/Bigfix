@@ -1,0 +1,6 @@
+exists addresses whose (it as string starts with "45.193.153.") of adapters of network
+
+addresses whose (it as string starts with "145.193.153.") of adapters of network
+
+
+addresses whose (it as string starts with "45.193.153.") of adapters whose ( up of it AND loopback of it = false) of network

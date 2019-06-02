@@ -1,0 +1,18 @@
+wait ’foo’
+parameter "error" = "{exit code of action}"
+if {parameter "error" != "0"}
+exit {parameter "error"}
+endif
+// continue processing
+
+************************************
+
+setting "LRC_PoolR"={(exit code of action)} on "{now}" for client
+if {value of setting "LRC_PoolR" of client != "0"}
+ exit {(value of setting "LRC_PoolR" of client)}
+endif
+
+************************************
+
+setting "Last_action_RC"={(exit code of action)} on "{now}" for client
+exit {(value of setting "Last_action_RC" of client)}

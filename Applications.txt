@@ -1,0 +1,5 @@
+exists running application whose((it = "java.exe" OR it = "javaw.exe" OR it = "javaws.exe" OR it = "iexplore.exe" OR it = "firefox.exe") of (name of it as lowercase))
+
+exists running application "BESClient.exe"
+
+exists running application whose((it= "BESClient.exe" or it= "iexplore.exe") of (name of it))

@@ -1,0 +1,41 @@
+exists application "iexplorer.exe" of registry
+
+exists key "HKLM\System\CurrentControlSet" of registry
+
+exists key whose(name of it as lowercase starts with "google" of it) of key "HKLM\SOFTWARE\" of registry
+
+exist key whose (name of it as lowercase contains "adobe digital editions") of key "HKLM\Software\Adobe\" of registry
+
+(value "Environment" of key "HKEY_LOCAL_MACHINE\SOFTWARE\HB\Serverinfo\" of native registry) as string is "Production"
+
+value "Responsible" of key "HKEY_LOCAL_MACHINE\SOFTWARE\HB\Serverinfo\" of native registry
+
+exists key whose (value "UI" of it = "FRA") of keys of key "HKEY_LOCAL_MACHINE\SOFTWARE\Adobe\Acrobat Reader" of registry
+
+exists key "HKLM\System\CurrentControlSet\Services\BESWebReportsServer" whose (value "ObjectName" of it = "LocalSystem") of registry
+
+NOT (name of it as uppercase contains "ESR") of key of (keys "HKEY_LOCAL_MACHINE\Software\Mozilla\Mozilla Firefox" of it) of registry
+
+(value "CurrentVersion" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion" of native registry as string is "6.1"
+
+(exists key "11.0" of it OR exists key "6.0" of it OR exists key "5.0" of it) of key "HKLM\Software\Adobe\Acrobat Reader\" of registry
+
+(it="1033" OR it="1036" OR it="1040") of value "LangId" of key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Winamp" of registry 
+
+exists key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectX" whose (value "Version" of it as string as version = "4.07.00" as version) of registry 
+
+exists key "HKLM\Software\Microsoft\NET Framework Setup\NDP" whose (exists keys whose (name of it starts with "v2.0" AND value "SP" of it = 2) of it) of registry
+
+exists key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Media Center" whose (value "Ident" of it ="4.0" or value "Ident" of it = "4.1") of registry
+
+exists key "HKLM\System\CurrentControlSet\Services\BESClient" whose (value "ObjectName" of it = "LocalSystem4444" or value "DisplayName" of it = "BES Client") of registry
+
+not exists key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server" whose (value "InstalledInstances" of it as string as lowercase is "mssqlserver%00%00") of registry 
+
+exists value "MinorVersion" whose (it as string as lowercase contains "sp1") of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings" of registry
+
+exists key "HKLM\System\CurrentControlSet\Services\Appinfo" whose (exists name whose (it = "ObjectName" or it = "ImagePath" or it = "DisplayName" or it = "Description") of values of it) of registry
+
+(((name of it = "Win2012" AND value "CurrentVersion" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion" of native registry as string is "6.1")) AND service pack major version of it = 1) of operating system
+
+(exists file (windows folder as string & "\.was.installlocations.registry")) AND (exists (lines of file (windows folder as string & "\.was.installlocations.registry"))) AND (exists file ((it & "\properties\version\was.product") of ((lines of file (windows folder as string & "\.was.installlocations.registry")) as string))) AND ((((node value of xpath "/product/version/text()" of it as version >= "8.0.0.0" as version) AND (node value of xpath "/product/id/text()" of it = "ND"))) of xml document of file ((it & "\properties\version\was.product") of ((lines of file (windows folder as string & "\.was.installlocations.registry")) as string)))

@@ -1,0 +1,17 @@
+v4.0
+
+value "Version" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" of native registry
+
+v3.0
+
+value "Version" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.0\Setup" of native registry
+
+v3.5
+
+value "Version" of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5\1033" of native registry
+
+
+
+exists key "HKLM\Software\Microsoft\NET Framework Setup\NDP" whose (exists keys whose (name of it starts with "v3.5") of it) of registry
+
+exists key "HKLM\Software\Microsoft\NET Framework Setup\NDP" whose (exists keys whose (name of it starts with "v2.0" AND value "SP" of it = 2) of it) of registry

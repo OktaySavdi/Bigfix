@@ -1,0 +1,5 @@
+if {exist file "C:\temp\Start_Service.ps1"}
+delete "C:\temp\Start_Service.ps1"
+else {if exist file "C:\temp\Stop_Service.ps1"}
+delete "C:\temp\Stop_Service.ps1"
+endif

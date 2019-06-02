@@ -1,0 +1,17 @@
+Delete
+
+regdelete "<registry key>" "<value name>"
+
+regdelete "[HKEY_CLASSES_ROOT\ShellScrap]" "NeverShowExt"
+
+
+regset
+
+
+regset "<registry key>" "<value name>"=<value>
+
+regset "[HKEY_CURRENT_USER\Software\Microsoft\Office\9.1\Word\Security]" "Level"=dword:00000002
+
+regset "[HKEY_CURRENT_USER\Software\BigCorp Inc.]" "testString"="bob"
+
+regset "[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion]" "SourcePath2"="c:\\I386"

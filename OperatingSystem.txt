@@ -1,0 +1,37 @@
+name of operating system
+
+windows of operating system
+
+csd version of operating system
+
+name of operating system = "Win7"
+
+name of operating system is "Win7"
+
+csd version of operating system = "Service Pack 3"
+
+csd version of operating system is "Service Pack 3"
+
+csd version of operating system as version >= "Service Pack 6" as version
+
+(name of it ="Win7" AND (csd version of it ="Service Pack 1")) of operating system
+
+((name of it = "Win7") AND service pack major version of it = 1) of operating system
+
+(it starts with "Win" AND it does not start with "Win20") of name of operating system
+
+(it = "" OR it = "Service Pack 1" OR it = "Service Pack 2") of csd version of operating system
+
+((name of it = "Win7" AND product type of it = nt workstation product type)) of operating system
+
+(name of it ="Win7" AND (((it = 0) OR (it = 1)) of service pack major version of it )) of operating system
+
+(name of it = "Win2000" AND (csd version of it = "Service Pack 3" OR csd version of it = "Service Pack 4")) of operating system
+
+(name of it ="Win7" OR name of it ="WinXP" AND (csd version of it ="Service Pack 1" OR csd version of it ="Service Pack 4")) of operating system
+
+(csd version of operating system contains "Service Pack") AND (first 1 of following text of last "Service Pack " of csd version of operating system as integer >= 2)
+
+(it = "WinVista" or it = "Win2008" or it = "Win10" or it = "Win2008R2" or it = "Win8" or it = "Win8.1" or it = "Win2012" or it = "Win2012R2") of name of operating system
+
+csd version of operating system contains "6" AND (exists key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hotfix\Q246009" whose (value "Installed" of it = 1) of registry)

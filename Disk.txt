@@ -1,0 +1,4 @@
+((total space of it /(1024*1024*1024)) as string & " GB") of drive "Z:" as string
+
+
+if exists drive whose (name of it is "C:" and type of it is "DRIVE_FIXED") then ((total space of it /(1024*1024*1024)) as string & " GB") of drive "C:" as string else ("Yok")

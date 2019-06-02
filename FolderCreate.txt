@@ -1,0 +1,5 @@
+if {not exists folder "c:\archivedata"}
+  folder create "c:\archivedata"
+endif
+// copy from data dir to archivedata dir, copy subdirectories and suppress prompt
+dos xcopy /E /Y c:\data c:\archivedata

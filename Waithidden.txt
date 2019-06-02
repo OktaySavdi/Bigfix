@@ -1,0 +1,20 @@
+waithidden "__Download\AdobeAIRInstaller.exe" -silent
+
+wait __Download\WindowsXP-KB935843-x86-TRK.exe /quiet /norestart
+
+dos %windir%\syswow64\cmd.exe /C __Download\jre-8u73-windows-i586.exe /s
+
+waithidden msiexec.exe /p __Download\Exchange2010-KB3078674-x64-en.msp /quiet /norestart
+
+waithidden msiexec.exe /p "__Download\AdbeRdrUpd11014.msp" REINSTALL=ALL REINSTALLMODE=omu /qn
+
+waithidden "{pathname of system folder & "\wusa.exe"}" "{pathname of client folder of current site & "\__Download\Windows8.1-KB3128650-x64.msu"}" /quiet /norestart
+
+waithidden "{pathname of system folder & "\wusa.exe"}" "{pathname of client folder of current site & "\__Download\Windows8.1-KB3049989-v3-x64.msu"}" /quiet /norestart
+
+waithidden {if (name of operating system = "WinXP" AND personal bit (suite mask of operating system)) then "tskill java /a" else "taskkill /F /IM java.exe"}
+waithidden {if (name of operating system = "WinXP" AND personal bit (suite mask of operating system)) then "tskill javaw /a" else "taskkill /F /IM javaw.exe"}
+waithidden {if (name of operating system = "WinXP" AND personal bit (suite mask of operating system)) then "tskill javaws /a" else "taskkill /F /IM javaws.exe"}
+waithidden {if (name of operating system = "WinXP" AND personal bit (suite mask of operating system)) then "tskill iexplore /a" else "taskkill /F /IM iexplore.exe"}
+waithidden {if (name of operating system = "WinXP" AND personal bit (suite mask of operating system)) then "tskill firefox /a" else "taskkill /F /IM firefox.exe"}
+

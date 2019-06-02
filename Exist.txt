@@ -1,0 +1,49 @@
+exists folder "C:\Users\"
+
+if (exists folder "D:\COMPONENTS") then (sha1 of concatenation of sha1s of descendants of folder "D:\COMPONENTS") else ("Mevcut Degil")
+
+exist files ("Server.txt" ; "Server2.txt") of folder "Z:\temp\"
+
+exists content whose(it contains "deneme") of file "z:\temp\test.ps1"
+
+exists service "wuauserv" whose (start type of it = "disabled")
+
+exists file (pathname of windows folder & "\SysWOW64\cmd.exe")
+
+exists services whose (display name of it as lowercase contains "websphere")
+
+exists service whose(display name of it contains "tomcat")
+
+((exists files "gdiplus.dll" whose (exists (version of it < "5.2.6002.22791")) of find folders "*gdiplus*" of folder "winsxs" of windows folder))
+
+exists file "explorer.exe" of windows folder
+
+(exists file "usbser.sys" of (folder "drivers" of system folder))
+
+exists file whose (name of it contains "KB890830") of folder (pathname of parent folder of client folder of site "actionsite" as string & "\__MSTools\RemovalTool")
+
+exists file "BESConsole.exe" whose(version of it <="9.2.6.94") of folder "C:\Program Files (x86)\BigFix Enterprise\BES Console"
+
+not exists file "rdpwd.sys" whose(version of it < "5.1.2600.6258") of folder "drivers" of system folder
+
+(exists file "rdpwd.sys" whose ((version of it < "5.1.2600.6258")) of it) of (folder "drivers" of system folder) 
+
+exists file whose(name of it as lowercase starts with "besc" and version of it >="9.2.6.94") of folder "C:\Program Files (x86)\BigFix Enterprise\BES Console"
+
+(not exists file whose (name of it as lowercase ends with ".ocx" AND version of it > "6") of folder "Macromed\Flash" of system folder 
+
+exists (folders whose(exists folder "Reader" of it AND exists file "acrord32.exe" of folder "Reader" of it) of folder "Adobe" of folders whose (name of it as lowercase contains "program files") of folder "c:\")
+
+not exists file "usbstor.sys" whose ((it = "5.1.2600" AND it >= "5.1.2600.7012") of version of it) of folders ("drivers"; "DllCache") of system folder
+
+exists setting "_BESClient_AllowCustomRepoDownloads" of client and exists value of setting "_BESClient_AllowCustomRepoDownloads" of client
+
+exists file "Z:\Setuplar\IBM_IEM\IEM9.2.6.94\BigFix-BES-Relay-9.2.6.94.exe" whose (version of it = "9.2.6.95")
+
+exists file whose((it starts with "flash" and it ends with ".ocx") of (name of it as lowercase)) of folder "macromed\flash" of system folder
+
+(exists file whose (((it starts with "flash" and it ends with ".ocx") OR (it = "swflash.ocx")) of (name of it as lowercase) and version of it < "18.0.0.326") of it)
+
+exists number of lines whose(it contains "Orphan local file") of file ("C:\Users\" & name of current user & "\appdata\local\temp\MistSync.log")
+
+exists site whose (name of it = "Enterprise Security" OR name of it = "SecureInfo EVR" OR name of it = "SANS Top Vulnerabilities to Windows Systems" OR name of it = "eEye Remediation Manager" OR name of it as string starts with "Patches for Windows ")

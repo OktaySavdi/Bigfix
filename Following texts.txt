@@ -1,0 +1,13 @@
+following texts of firsts ": " of (following texts of firsts "ComputerName" of lines of file "D:\taskScheduler.log")
+
+following texts of firsts "ResourceName=" of lines whose (it starts with "ResourceName=") of file "C:\temp\mf printer.epp"
+
+(following text of first ":" of lines whose (it starts with "B:") of file "/opt/sni/unix/etc/bladeinfo")
+
+((preceding text of first ":" of following texts of first ":" of following texts of first ":" of following texts of first ":" of following texts of first ":" of lines whose (it contains "HS21") of file "/opt/sni/unix/etc/bladeinfo") as version < "1.19")
+
+lines whose (line number of it = maximum of (it as integer + 1) of line numbers of lines whose (it contains "Name") of file "C:\version.log") of file "C:\version.log"
+
+tuple string items 3 of ("cbcbc005mm, 08, uxfit344, HS21, 1.19, 1.06, 1.20, 1.4.11.43, enabled")
+
+tuple string item 3 of concatenation ", " of (it as trimmed string) of substrings separated by "," of "cbcbc005mm, 08,uxfit344, HS21 ,1.19,1.06,1.20,1.4.11.43,enabled"

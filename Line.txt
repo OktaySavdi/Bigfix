@@ -1,0 +1,10 @@
+line 1 of files of folder "z:\temp"
+
+lines of file "z:\temp\Server.txt"
+
+lines whose (it contains "10.130.9.2;Y") of file "z:\temp\ctm_test_srv.txt"
+
+lines whose(it contains "Web Components") of find files "*.log" of folder "Logs" of folder (pathname of windows folder & "\CCM")
+
+
+

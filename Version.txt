@@ -1,0 +1,14 @@
+version of regapp "iexplore.exe" = "9"
+
+version of file "msiexec.exe" of system folder
+
+version of regapp "iexplore.exe" as string starts with "6"
+
+version of file "BESConsole.exe" of folder "C:\Program Files (x86)\BigFix Enterprise\BES Console"
+
+exists key "HKLM\Software\Microsoft\NET Framework Setup\NDP" whose (exists keys whose (name of it starts with "v3.5") of it) of registry
+
+exists key "HKLM\Software\Microsoft\NET Framework Setup\NDP" whose (exists keys whose (name of it starts with "v2.0" AND value "SP" of it = 2) of it) of registry
+
+
+if ((((name of it contains "Linux") or (name of it as lowercase starts with "win") ) of operating system ) and (exists setting whose ((name of it starts with "LMT_Server_Path") and exists file (value of it & "/wlp/lib/versions/WebSphereApplicationServer.properties")) of client)) then (keys "com.ibm.websphere.productVersion" of files "/wlp/lib/versions/WebSphereApplicationServer.properties" of folders (values of settings whose (name of it starts with "LMT_Server_Path") of client)) else "Not installed"

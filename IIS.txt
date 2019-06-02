@@ -1,0 +1,11 @@
+IIS Version
+
+unique values of (value "MajorVersion" of it as string & "." & value "MinorVersion" of it as string) of keys "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InetStp" of (x64 registries; x32 registries)
+
+IIS-Components
+
+number of unique values of names of values whose (it = 1) of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InetStp\Components" of x32 registry
+
+IIS-Components(Feature)
+
+unique values of names of values whose (it = 1) of key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InetStp\Components" of x32 registry

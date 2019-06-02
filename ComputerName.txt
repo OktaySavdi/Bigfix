@@ -1,0 +1,22 @@
+(last 2 of (computer name as lowercase) is "y1") OR (last 2 of (computer name as lowercase) is "d1") OR (last 2 of (computer name as lowercase) is "o1")
+
+((first 2 of it is not "sb" and last 2 of it is not "y1" and last 2 of it is not "d1" and last 2 of it is not "o1" and last 2 of it is not "o2" and last 2 of it is not "y2") of (computer name as lowercase))
+
+computer name as lowercase starts with "sb"
+
+not (computer name as lowercase starts with "coiembck")
+
+Uppercase
+
+computer name as uppercase is "GM"
+
+Lowercase
+computer name as lowercase is "GM"
+
+Relevance 1
+
+computer name as lowercase ends with "d1" or computer name as lowercase ends with "y1" 
+
+Relevance 2
+
+computer name as lowercase starts with "sb"

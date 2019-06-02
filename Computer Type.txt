@@ -1,0 +1,7 @@
+ComputerType
+
+if exists true whose (if true then( (((item 0 of it contains "VMware") or ((item 0 of it contains "Microsoft") and not (item 1 of it as lowercase contains "surface")) or (item 0 of it contains "Xen")) of ((value "manufacturer" of it as string, value "product_name" of it as string) of structure "system_information" of smbios))) else false) then "Virtual" else "Physical"
+
+ComputerModel
+
+if (exists wmi) then (string values of selects "Model from Win32_ComputerSystem" of wmi) else ("N/A")

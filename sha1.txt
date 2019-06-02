@@ -1,0 +1,4 @@
+sha1 of file  "d:\deneme\oktay.txt"
+
+
+if (exists folder "C:\EndService") then (sha1 of concatenation of sha1s of descendants of folder "C:\EndService") else ("Mevcut Degil")
